@@ -81,9 +81,9 @@ function mostrarcomidas() {
   for (let i = 0; i < comidas.length; i++) {
     comidaContainer.innerHTML += `
       <article class="card"> 
-        <h2>${comidas[i].nombre}</h2>
-        <p>${comidas[i].provincia}</p>
-        <span>${comidas[i].categoria}</span>
+        <h2>${comidas[i].nombre}</h2>,
+        <p>${comidas[i].provincia}</p>,
+        <span>${comidas[i].categoria}</span>,
       </article>
     `;
   }
