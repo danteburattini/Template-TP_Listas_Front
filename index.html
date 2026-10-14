@@ -7,8 +7,26 @@
     <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
-    <header>
-      <!-- Para filtros y navegacion -->
+    <header class="filtros">
+      <input type="search" id="buscador" placeholder="buscar por nombre, provincia">
+      
+      <select id="filtroCategoria">
+      <option value="Parrilla"> parrilla</option>
+      <option value="Horno"> horno </option>
+      <option value="Guiso"> Guiso </option>
+      <option value="Frito"> Frito </option>
+      </select>
+
+      <select id="filtroProvincia">
+        <option value="Bueros Aires"> Buenos Aires</option>
+        <option value="Cordoba"> Cordoba </option>
+        <option value="Entre Rios"> Entre Rios </option>
+        <option value="Jujuy"> Jujuy </option>
+        <option value="Jujuy"> Jujuy </option>
+        <option value="Salta"> Salta </option>
+        <option value="Sante Fe"> Sante Fe </option>
+        <option value="Tucuman"> Tucuman</option>
+        </select>
     </header>
 
     <main class="comida-container" id="comidaContainer">
@@ -16,7 +34,14 @@
     </main>     
 
     <section class="addFood">
-      <!-- Para el form para agregar comida -->
+      <form id="agregarComida">
+        <h3>Agregar nueva comida</h3>
+        <input type="text" name="nombre" placeholder="Nombre de la comida" required>
+        <input type="text" name="categoria" placeholder="Categoría " required>
+        <input type="text" name="provincia" placeholder="Provincia" required>
+        <input type="text" name="ingredientes" placeholder="Ingredientes" required>
+        <button type="submit">Guardar Comida</button>
+    </form>
     </section>
 
     <script type="module" src="./main.js"></script>
