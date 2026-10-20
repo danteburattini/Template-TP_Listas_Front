@@ -47,7 +47,18 @@ comidaNueva.addEventListener("submit", (event) => {
    ingredientes: event.target.ingredientes.value.split(","),
   }
 
+const ingredientesInput = document.querySelectorAll(".ingrediente")
+let ingredientes = []
+
+ingredientesInputs.forEach(forEach=>{
+  ingredientes.push(input.value);
+})
+
+
+
   comidas.push(nuevaComida)
+
+  mostrarComidas(comidas)
 
   mostrarComidasConForEach()
 
@@ -57,6 +68,24 @@ comidaNueva.addEventListener("submit", (event) => {
 const buscador = document.getElementById("buscador")
 const filtroCategoria = document.getElementById("filtroCategoria")
 const filtroProvincia = document.getElementById("filtroProvincia")
+busqueda.addEventListener("input",buscar)
+
+function actualizarFiltros(){
+  let categorias = []
+
+  comidas.forEach(comida => {
+    if(!categorias.incluidas(comida.categoria)){
+      categorias.push(comida.categoria)}
+
+  })
+
+  categorias.forEach(categoria=>{
+    filtroCategoria.innerHTML  += <option value="$(categoria)"> $(categoria)</option>
+
+  })
+
+
+}
 
 function filtrar(){
   const comidasFiltradas = comidas.filter( comida => { 
@@ -81,4 +110,13 @@ mostrarComidasConForEach(comidasFiltradas)
 filtroCategoria.addEventListener("change", filtrar)
 filtroProvincia.addEventListener("change", filtrar)
 buscador.addEventListener("input", buscar)
+
+const agregarIngredientes = document.getElementById("agregarIngrediente")
+const ingredientesContainer = document.querySelector(".contenedor-ingredientes")
+
+agregarIngredientes.addEventListener("click", () => {
+
+  ingredientesContainer.innerHTML+=
+  <input type="text"class="ingrediente"placeholder="ingredintes"required></input>
+})
 
